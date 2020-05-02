@@ -1,0 +1,829 @@
+/* Generales */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+}
+
+.contenedor{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.titulo-seccion{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-seccion h2{
+    color: #0089e0;
+    font-size: 3.125rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.titulo-seccion p{
+    color: #979797;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.btn-volver-arriba{
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    z-index: 1000;
+    display: inline-block;
+    transition: all .5s ease;
+    margin-right: -60px;
+}
+
+.btn-volver-arriba a{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.btn-volver-arriba a i{
+    font-size: 1rem;
+    color: white;
+    line-height: 40px;
+}
+
+/* ----- Encabezado ----- */
+
+.menu-bar-pc{
+    width: 100%;
+    min-height: 68px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0 36px;
+    background: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+.logo{
+    display: inline-block;
+    width: 50px;
+}
+
+.logo img{
+    width: 100px;
+    vertical-align: top;
+}
+.menu-principal a, .top-redes a{
+    display: inline-block;
+    padding: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0;
+    line-height: 1.5em;
+    transition: all .3s ease;
+}
+
+.menu-principal a:last-child, .top-redes a:last-child{
+    padding-right: 0;
+}
+
+.top-redes a i{
+    font-size: 1.25rem;
+}
+
+.menu-principal a:hover, .top-redes a:hover{
+    color: #0089e0;
+    transform: scale(1.03,1.03);
+    transition: all .1s ease-in;
+}
+
+.fixed-header{
+    width: 100%;
+    min-height: 68px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+    padding: 0 36px;
+    background: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    transition: all .4s ease;
+    margin-top: -68px;
+}
+
+.fixed-header .menu-principal a .top-redes a{
+    color: #444444;
+}
+
+.fixed-header .menu-principal a:hover .top-redes a:hover{
+    color: #0089e0;
+}
+
+/* Menu menu */
+
+.menu-mobile{
+    display: none;
+}
+
+/* ---- Main ---- */
+
+/* Banner Principal */
+
+.main{
+    width: 100%;
+    margin-top: -68px;
+}
+
+.main .banner-principal{
+    width: 100%;
+    position: relative;
+}
+
+.main .banner-principal .banner{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/BannerPrincipal.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.9;
+}
+
+.main .banner-principal .texto-banner{
+    display: inline-block;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.main .banner-principal .texto-banner h2{
+    font-weight: 400px;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 20px;
+    font-size: 2rem;
+    
+}
+.main .banner-principal .texto-banner h1{
+    font-size: 6.07rem;
+    font-weight: 800;
+    line-height: 90px;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+}
+.main .banner-principal .texto-banner a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #0089e0;
+    color: rgba(0, 0, 0, 0.9);
+    transition: all .7s ease;
+}
+
+.main .banner-principal .texto-banner a:hover{
+    color: #0089e0;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Proyectos */
+
+.main .proyectos{
+    background: #F3f4fa;
+    padding: 108px 0 54px 0;
+}
+
+.main .proyectos .galeria-proyectos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 34px;
+    border-bottom: 1px solid #ccc;
+}
+
+.main .proyectos .galeria-proyectos .proyecto{
+    width: 32%;
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+.main .proyectos .galeria-proyectos .proyecto img{
+    width: 100%;
+    vertical-align: top;
+}
+
+/* Modal Fotos Proyecto */
+
+.modal{
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.modal img{
+    width: 90%;
+}
+
+.modal .btn-cerrar{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: #0089e0;
+    border-radius: 30%;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.modal .btn-cerrar i{
+    font-size: 1rem;
+    color: white;
+    line-height: 40px;
+}
+
+
+/* Acerca de */
+
+.main .acerca-de{
+    background: #F3f4fa;
+}
+
+.main .acerca-de .contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main .acerca-de .contenedor .titulo-seccion{
+    width: 33.33%;
+    text-align: left;
+}
+
+.main .acerca-de .contenedor .titulo-seccion h2{
+    margin-bottom: 0;
+}
+
+.main .acerca-de .texto-acerca-de{
+    width: 66.66%;
+    text-align: left;
+}
+
+.main .acerca-de .texto-acerca-de p{
+    color: #979797;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Slider */
+
+.main .contenedor-slider{
+    width: 100%;
+    overflow: hidden;
+    background: #F3f4fa;
+    padding: 54px 0;
+    position: relative;
+}
+
+.main .contenedor-slider .slider{
+    width: 400%;
+    display: flex;
+}
+
+.main .contenedor-slider .slider .slide{
+    width: 20%;
+    max-width: 850px;
+    margin-right: .5%;
+    box-shadow: 0px 20px 40px #aaa;
+}
+
+.main .contenedor-slider .slider .slide img{
+    width: 100%;
+    vertical-align: top;
+}
+
+.main .contenedor-slider .btn-anterior, .main .contenedor-slider .btn-siguiente{
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.main .contenedor-slider .btn-anterior{
+    left: 3%;
+}
+
+.main .contenedor-slider .btn-siguiente{
+    right: 3%;
+}
+
+.main .contenedor-slider .btn-anterior i, .main .contenedor-slider .btn-siguiente i{
+    color: white;
+    font-size: 1.75rem;
+}
+
+.main .contenedor-slider .btn-anterior i:hover, .main .contenedor-slider .btn-siguiente i:hover{
+    color: #0089e0;
+}
+
+/* Nuestro Equipo */
+
+.main .nuestro-equipo{
+    background: #F3f4fa;
+    padding-top: 54px;
+    padding-bottom: 108px;
+}
+
+.main .nuestro-equipo .equipo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo{
+    background: white;
+    padding: 50px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0px 9px 32px -1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo:first-child,.main .nuestro-equipo .equipo .persona-equipo:last-child{
+    position: relative;
+    top: 20px;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo .foto{
+    width: 50%;
+    max-width: 100px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.main .nuestro-equipo .equipo .persona-equipo .foto img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+.main .nuestro-equipo .equipo .texto h3{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #0089e0;
+}
+
+.main .nuestro-equipo .equipo .texto h4{
+    color: #979797;
+    font-size: .8rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.main .nuestro-equipo .equipo .texto p{
+    color: #979797;
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+.main .nuestro-equipo .equipo .redes-equipo{
+    margin-top: 20px;    
+}
+
+.main .nuestro-equipo .equipo .redes-equipo i{
+    padding: 0 5px;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    color: #0f0e0ebb;
+}
+
+.main .nuestro-equipo .equipo .redes-equipo i:hover{
+    color: #0089e0;
+}
+
+/* Seccion Informacion Extra */
+
+.main .info-extra{
+    background: #191919;
+    padding: 130px 0;
+}
+
+.main .info-extra .contenedor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.main .info-extra .contenedor .info{
+    width: 50%;
+}
+
+.main .info-extra .contenedor .info .contenido-info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.main .info-extra .contenedor .info .contenido-info:first-child{
+    margin-bottom: 30px;
+}
+
+.main .info-extra .contenedor .info .contenido-info .icono-info{
+    width: 5%;
+}
+
+.main .info-extra .contenedor .info .contenido-info .icono-info i{
+    font-size: 1.5rem;
+    color: white;
+}
+
+.main .info-extra .contenedor .info .contenido-info .texto-info{
+    margin-left: 3%;
+}
+
+.main .info-extra .contenedor .info .contenido-info .texto-info h4{
+    font-size: 1.9rem;
+    color: white;
+    line-height: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.main .info-extra .contenedor .info .contenido-info .texto-info p{
+    color: #979797;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.main .info-extra .contenedor .foto{
+    width: 50%;
+    height: 300px;
+    box-shadow: 0px 9px 32px -1px rgba(0, 0, 0, 0.5);
+    background-image: url(../img/info-foto.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* contacto */
+
+.main .contacto{
+    padding: 190px 0;
+    background-image: url(../img/bg-contacto.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main .contacto .contenedor-formulario{
+    background: white;
+    min-height: 485px;
+    border-radius: 10px;
+    box-shadow: 0px 9px 32px -1px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .contacto .contenedor-formulario .formulario{
+    width: 50%;
+    padding: 70px;
+}
+
+.main .contacto .contenedor-formulario .formulario h2{
+    font-size: 1.375rem;
+    line-height: 24px;
+    color: #0089e0;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+ 
+.main .contacto .contenedor-formulario .formulario p{
+    color: #979797;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.main .contacto .contenedor-formulario .formulario form input[type="text"], .main .contacto .contenedor-formulario .formulario form input[type="email"]{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 12px 0;
+    outline: none;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #979797;
+    font-size: .9rem;
+    font-weight: 400;
+    letter-spacing: .05px;
+}
+
+.main .contacto .contenedor-formulario .formulario form textarea{
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 12px 0;
+    outline: none;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: 88px;
+    min-height: 88px;
+    color: #979797;
+    margin-bottom: 10px;
+    font-size: .9rem;
+    font-weight: 400;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0;
+}
+
+.main .contacto .contenedor-formulario .formulario form input[type="submit"]{
+    width: 100%;
+    border: none;
+    border: 1px solid #0089e0;
+    padding: 8px;
+    background: #0089e0;
+    color: white;
+    font-size: .9rem;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.main .contacto .contenedor-formulario .formulario form input[type="submit"]:hover{
+    background: white;
+    color: #0089e0;
+}
+
+.main .contacto .contenedor-formulario .foto{
+    background-image: url(../img/foto-contacto.jpg);
+    width: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+/* Validacion formulario */
+
+.main .contacto .contenedor-formulario .formulario form .error{
+    display: none;
+    color: #ff8c8c;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+/* ---- Pie de pagina ---- */
+
+footer{
+    background: #F3f4fa;
+    padding: 54px 0;
+    text-align: center;
+}
+
+footer .copy{
+    color: #979797;
+    font-size: .9rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+footer .footer-redes i{
+    padding: 0 5px;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    color: #0f0e0ebb;
+    transition: all .3s ease;
+
+}
+
+footer .footer-redes i:hover{
+    color: #0089e0;
+}
+
+/* ---- Media Queries ---- */
+
+@media screen and (max-width:1040px){
+    /* Nuestro Equipo */
+
+    .main .nuestro-equipo .titulo-seccion{
+        margin-bottom: 60px;        
+    }
+
+
+    .main .nuestro-equipo .equipo .persona-equipo{
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .main .nuestro-equipo .equipo .persona-equipo:first-child{
+        top: -20px;
+    }
+
+    .main .nuestro-equipo .equipo .persona-equipo .foto{
+        margin-right: 20px;
+    }
+
+    /* Informacion Extra */
+
+    .main .info-extra .contenedor .info{
+        width: 100%;
+    }
+
+    .main .info-extra .contenedor .foto{
+        display: none;
+    }
+}
+
+@media screen and (max-width:912px){
+    /* Redes Equipo */
+ 
+    .main .nuestro-equipo .equipo .redes-equipo{
+        position: fixed;
+        padding: 0;
+        justify-content: space-between;
+        font-size: 1.25rem;
+        color: #0f0e0ebb;
+    }   
+}
+
+@media screen and (max-width:900px){
+
+    /* Encabezado */
+    .menu-bar-pc{
+        display: none;
+    }
+
+    .menu-mobile{
+        display: block;
+        width: 100%;
+        padding: 5px 18px;
+        background: black;
+        color: #444444;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+
+    .menu-mobile .barra{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-mobile .barra .logo{
+        width: 40px;
+    }
+
+    .menu-mobile .barra img{
+        width: 180%
+    }
+
+    .menu-mobile .barra a i{
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    .menu-mobile .menu-principal{
+        width: 80%;
+        display: block;
+        position: fixed;
+        top: 56px;
+        left: -100%;
+        border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+        border-right: 1px solid rgba(204, 204, 204, 0.5);
+        box-shadow: 0px 1px 5px -1px rgba(0,0,0,.2);
+        background: black;
+        text-align: center;
+    }
+
+    .menu-mobile .menu-principal a{
+        display: block;
+        padding: 10px;
+        color:white;
+        border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+    }
+
+    .menu-mobile .menu-principal a:hover{
+        background: #242222;
+        color: #0089e0;
+        transform: scale(1.0,1.0);
+    }
+
+    .fixed-header{
+        display: none;
+    }
+
+    .main{
+        margin-top: 0;
+    }
+
+    /* Acerca De */
+    .main .acerca-de .contenedor .titulo-seccion, .main .acerca-de .contenedor .texto-acerca-de{
+        width: 100%;
+        text-align: center;
+    }
+
+    .main .contacto .contenedor-formulario .formulario{
+        width: 100%;
+        text-align: center;
+    }
+
+    .main .contacto .contenedor-formulario .foto{
+        display: none;
+    }
+
+    .main .contacto .contenedor-formulario .formulario form input[type="text"], .main .contacto .contenedor-formulario .formulario form input[type="email"],.main .contacto .contenedor-formulario .formulario form textarea{
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width:550px){
+    /* Banner Principal */
+
+    .main .banner-principal .texto-banner h1{
+        font-size: 4rem;
+    }
+
+    /* Tutulo Secciones */
+
+    .titulo-seccion h2{
+        font-size: 2.1rem;
+    }
+
+    /* Proyectos */
+
+    .main .proyectos .galeria-proyectos .proyecto{
+        width: 49%;
+    }
+
+    /* Nuestro Equipo */
+    .main .nuestro-equipo .equipo .persona-equipo{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Seccion Informacion Extra */
+
+    .main .info-extra .contenedor .info .contenido-info{
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .main .info-extra .contenedor .info .contenido-info .icono-info{
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .main .info-extra .contenedor .info .contenido-info .icono-info i{
+        font-size: 3.5rem;
+        margin: 20px;
+    }
+
+    
+    .main .info-extra .contenedor .info .contenido-info .texto-info h4{
+        font-size: 1.175rem;
+    }
+    
+    .main .contacto .contenedor-formulario .formulario{
+        padding: 40px;
+    }
+    
+}
+
